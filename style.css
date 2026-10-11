@@ -23,5 +23,9 @@
 .contact-form input:focus,.contact-form textarea:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(98,88,223,.08)}
 .contact-form textarea{min-height:150px;resize:vertical}
 .contact-form .button{border:none;cursor:pointer;width:fit-content;padding:14px 18px}
+.contact-form .button:disabled{cursor:wait;opacity:.7}
+.contact-form .form-status{margin:0;font-size:13px;line-height:1.5}
+.contact-form .form-status[data-state="success"]{color:#207044}
+.contact-form .form-status[data-state="error"]{color:#a52b36}
 
 @media(max-width:760px){.contact-inner{grid-template-columns:1fr;padding:24px 20px}.field-row{grid-template-columns:1fr}.contact-copy{padding-right:0}.contact-doodle{position:static;margin-top:16px}.contact-actions{gap:10px}.contact-form{padding:18px}}

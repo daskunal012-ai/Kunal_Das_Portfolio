@@ -1,4 +1,8 @@
 (() => {
+  const emailJsPublicKey = 'LMvZNJqNR1snmfiM1';
+  const emailJsServiceId = 'service_c49vb1g';
+  const emailJsTemplateId = 'template_rnpg3bf';
+
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
   const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
@@ -39,17 +43,44 @@
 
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const formData = new FormData(contactForm);
-      const name = formData.get('name')?.toString().trim() || 'Hello';
-      const email = formData.get('email')?.toString().trim() || '';
-      const subject = formData.get('subject')?.toString().trim() || 'Portfolio enquiry';
-      const message = formData.get('message')?.toString().trim() || '';
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const submitLabel = submitButton?.querySelector('.button-label');
+    const status = contactForm.querySelector('.form-status');
 
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-      window.location.href = `mailto:das.kunal0047@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      contactForm.reset();
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init({ publicKey: emailJsPublicKey });
+    }
+
+    contactForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (submitButton) submitButton.disabled = true;
+      if (submitLabel) submitLabel.textContent = 'Sending…';
+      if (status) {
+        status.hidden = false;
+        status.textContent = 'Sending your message…';
+        status.dataset.state = 'pending';
+      }
+
+      try {
+        if (typeof emailjs === 'undefined') {
+          throw new Error('EmailJS did not load. Check the network connection and try again.');
+        }
+        await emailjs.sendForm(emailJsServiceId, emailJsTemplateId, contactForm);
+        contactForm.reset();
+        if (status) {
+          status.textContent = 'Thanks! Your message has been sent.';
+          status.dataset.state = 'success';
+        }
+      } catch (error) {
+        console.error('EmailJS failed to send the contact form.', error);
+        if (status) {
+          status.textContent = 'Sorry, your message could not be sent. Please try again or email me directly.';
+          status.dataset.state = 'error';
+        }
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+        if (submitLabel) submitLabel.textContent = 'Send message';
+      }
     });
   }
 

@@ -36,4 +36,4 @@ Open `index.html` in a browser. No build tools or package installation are requi
 5. Choose `main` and `/ (root)`, then save.
 6. Wait for GitHub Pages to publish and open the URL shown on the Pages settings screen.
 
-This is a static website; it does not include a backend or contact form service. The email CTA opens the visitor's email app through a `mailto:` link.
+The contact form sends messages through EmailJS from the browser. The EmailJS public key is visible in `script.js` by design; do not put a private key or other secret in the front-end. The EmailJS template should use the form field names `name`, `email`, `subject` and `message`. Direct email links remain available as an alternative.
