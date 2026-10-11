@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">Kunal Kumar Das portrait</title>
+  <desc id="desc">Stylized avatar placeholder for Kunal Kumar Das portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8d06b"/>
+      <stop offset="100%" stop-color="#7c6cff"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#3a33b1"/>
+      <stop offset="100%" stop-color="#201f59"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="700" fill="url(#bg)"/>
+  <circle cx="350" cy="230" r="150" fill="#f5d8c8"/>
+  <path d="M210 595c24-112 86-160 140-160s116 48 140 160" fill="url(#shirt)"/>
+  <path d="M248 286c22-62 85-109 146-109 73 0 132 48 150 111-21-13-41-18-72-15-55 5-92 22-120 47-26 23-61 37-104 33z" fill="#1d1b31" opacity="0.92"/>
+  <circle cx="310" cy="228" r="10" fill="#1d1b31"/>
+  <circle cx="390" cy="228" r="10" fill="#1d1b31"/>
+  <path d="M305 282c28 22 62 33 95 33 30 0 55-8 78-24" fill="none" stroke="#c8735d" stroke-width="12" stroke-linecap="round"/>
+  <text x="350" y="610" text-anchor="middle" font-size="120" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">KD</text>
+</svg>
