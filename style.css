@@ -32,7 +32,7 @@
 
 .portrait-frame{border:7px solid #fff;border-bottom-width:7px;border-radius:34px 34px 112px 34px;background:linear-gradient(145deg,#ffca4d,#7568f1);box-shadow:0 28px 70px rgba(35,30,94,.24),0 8px 20px rgba(35,30,94,.12)}
 .portrait-frame::after{content:"";position:absolute;z-index:3;inset:12px;border:1px solid rgba(255,255,255,.58);border-radius:24px 24px 102px 24px;pointer-events:none}
-.portrait-frame img{object-position:center 24%}
+.portrait-frame img{object-position:center top}
 .portrait-frame.portrait-fallback{align-items:center}
 .portrait-fallback-text{position:relative;z-index:2}
 @media(max-width:760px){.portrait-frame{border-radius:28px 28px 86px 28px}.portrait-frame::after{border-radius:19px 19px 76px 19px}}
