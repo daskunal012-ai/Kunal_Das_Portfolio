@@ -8,7 +8,7 @@ A responsive, static portfolio inspired by the supplied bright purple, orange an
 - `style.css` — responsive styling and decorative project mockups
 - `script.js` — mobile navigation, project filters and active navigation state
 - `assets/profile.jpg` — local hero portrait used by the portfolio
-- `assets/profile.svg` — stylized fallback portrait
+- `assets/profile.svg` — optional stylized avatar alternative
 - `.nojekyll` — keeps GitHub Pages from applying Jekyll processing to the static site
 
 ## Run locally
